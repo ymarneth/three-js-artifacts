@@ -1,5 +1,4 @@
 import {
-	Color,
 	EdgesGeometry,
 	LineBasicMaterial,
 	LineSegments,
@@ -32,7 +31,7 @@ export function createExampleObject(): Mesh {
 	mesh.add(outline);
 
 	slabFieldGeometry.computeBoundingBox();
-	
+
 	return mesh;
 }
 

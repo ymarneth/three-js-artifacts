@@ -1,11 +1,11 @@
 import {createExampleObject} from './Drawable';
-import {AmbientLight, Box3, Color, DirectionalLight, OrthographicCamera, Scene, Vector3, WebGLRenderer} from 'three';
+import {AmbientLight, Color, DirectionalLight, OrthographicCamera, Scene, WebGLRenderer} from 'three';
 
 function initScene(): [Scene, OrthographicCamera, WebGLRenderer] {
 	const scene = new Scene();
 	scene.background = new Color(0xd0d0d0); // Light grey background
 
-	const camera = setupCamera(scene);
+	const camera = setupCamera();
 	camera.updateProjectionMatrix();
 
 	const renderer: WebGLRenderer = new WebGLRenderer();
@@ -16,9 +16,8 @@ function initScene(): [Scene, OrthographicCamera, WebGLRenderer] {
 	return [scene, camera, renderer];
 }
 
-function setupCamera(scene: Scene): OrthographicCamera {
+function setupCamera(): OrthographicCamera {
 	const width = window.innerWidth;
-	const height = window.innerHeight;
 
 	const camera = new OrthographicCamera(
 		width / -2,
